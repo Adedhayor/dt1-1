@@ -5,37 +5,73 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DirecTokunbo — All Vehicles</title>
-    <link rel="icon" type="image/png" href="assets/images/logo.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/images/logo.png">
+    <!-- TODO: Create a simplified 32x32 favicon mark -->
     <meta name="description"
-        content="Browse our extensive inventory of high-quality auction cars from across the globe. Filter by make, year, price, and more.">
+        content="Browse our extensive inventory of high-quality auction cars from China. Filter by make, year, price, and more.">
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap"
+    <link rel="preload" as="image" href="assets/images/toyota-highlander.jpg">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
         rel="stylesheet">
 
     <!-- CSS -->
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/auction.css">
 </head>
 
-<body class="dark-theme">
-    <!-- Header -->
+<body>
+
+    <!-- ===== UTILITY TOP BAR ===== -->
+    <div class="topbar">
+        <div class="container topbar-inner">
+            <div class="topbar-left">
+                <a href="tel:+2348036758830" class="topbar-link">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.72 12 19.79 19.79 0 0 1 1.63 3.44 2 2 0 0 1 3.6 1.26h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.81a16 16 0 0 0 6.29 6.29l.95-.95a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                    +234 803 675 8830
+                </a>
+                <a href="https://wa.me/2348036758830" class="topbar-link" target="_blank" rel="noopener noreferrer">
+                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>
+                    WhatsApp Us
+                </a>
+            </div>
+            <div class="topbar-right">
+                <span class="topbar-live">
+                    <span class="live-dot pulse"></span>
+                    <span id="liveCount">48</span> Auctions Live
+                </span>
+                <span class="topbar-currency">NGN ₦</span>
+                <a href="index.html#contact" class="topbar-link">Register Interest</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== HEADER ===== -->
     <header class="site-header" id="header">
         <div class="container header-inner">
             <a href="index.html" class="logo">
-                <img src="assets/images/logo.png" alt="DirectTokunbo" class="logo-img">
+                <img src="assets/images/logo.png" alt="DirecTokunbo" class="logo-img">
             </a>
 
+            <form class="header-search" id="headerSearch" action="inventory.html" method="get">
+                <svg class="header-search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/>
+                </svg>
+                <input type="text" name="q" placeholder="Search by make, model, or type…" class="header-search-input">
+                <button type="submit" class="header-search-btn">Search</button>
+            </form>
+
             <nav class="main-nav" id="mainNav">
-                <a href="inventory.html" class="nav-link">Import</a>
-                <a href="inventory.html" class="nav-link">Auction</a>
-                <a href="index.html#why-us" class="nav-link">Why Us</a>
+                <a href="inventory.html" class="nav-link active">Browse Inventory</a>
+                <a href="inventory.html?sort=ending" class="nav-link">Live Auctions</a>
+                <a href="index.html#how-it-works" class="nav-link">How It Works</a>
+                <a href="index.html#faqs" class="nav-link">FAQ</a>
             </nav>
 
             <div class="header-actions">
-                <a href="index.html#contact" class="btn btn-primary">Contact Us</a>
+                <a href="index.html#contact" class="btn btn-primary">Get Started</a>
             </div>
 
             <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">
@@ -44,110 +80,132 @@
         </div>
     </header>
 
+    <!-- ===== CATEGORY BAR ===== -->
+    <div class="category-bar">
+        <div class="container">
+            <div class="category-tabs">
+                <button class="cat-tab active" data-cat="all">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+                    All Vehicles
+                </button>
+                <button class="cat-tab" data-cat="suv">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 17H3a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11a2 2 0 0 1 2 2v3"/><rect x="9" y="11" width="14" height="10" rx="2"/><circle cx="12" cy="21" r="1"/><circle cx="20" cy="21" r="1"/></svg>
+                    SUVs
+                </button>
+                <button class="cat-tab" data-cat="sedan">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 17H5M19 17a2 2 0 0 0 2-2v-4l-3-5H6L3 11v4a2 2 0 0 0 2 2M19 17l-1 2H6l-1-2"/><circle cx="7.5" cy="17.5" r="1.5"/><circle cx="16.5" cy="17.5" r="1.5"/></svg>
+                    Sedans
+                </button>
+                <button class="cat-tab" data-cat="truck">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+                    Trucks
+                </button>
+                <button class="cat-tab" data-cat="van">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 17H3a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11a2 2 0 0 1 2 2v3"/><rect x="9" y="11" width="14" height="10" rx="2"/></svg>
+                    Vans / Buses
+                </button>
+                <button class="cat-tab" data-cat="electric">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+                    Electric
+                </button>
+            </div>
+        </div>
+    </div>
+
     <main>
-        <!-- Hero Inventory (Premium Header) -->
-        <section class="hero-inventory">
-            <div class="container hero-content">
-                <h1 class="page-title" data-animate="fade-up">Explore China-to-Nigeria Auction Vehicles</h1>
-                <p class="page-subtitle" data-animate="fade-up" data-delay="100">
-                    Browse verified auction listings directly from China. Filter by make, price, or vehicle type.
+        <!-- ===== PAGE HERO ===== -->
+        <section class="page-hero">
+            <div class="container">
+                <h1 class="page-title">Explore China-to-Nigeria Auction Vehicles</h1>
+                <p class="page-subtitle">
+                    Browse verified auction listings directly from China. Filter by make, price, or vehicle type. All prices include Est. CIF Lagos.
                 </p>
-
-                <!-- Integrated Search Form (Same style as Home) -->
-                <form class="search-form" id="searchForm" data-animate="fade-up" data-delay="200">
-                    <div class="search-bar-inner">
-                        <div class="search-field">
-                            <select id="carType" name="type">
-                                <option value="">Type</option>
-                                <option value="sedan">Sedan</option>
-                                <option value="suv">SUV</option>
-                                <option value="truck">Truck</option>
-                                <option value="van">Van</option>
-                                <option value="bus">Bus</option>
-                            </select>
-                        </div>
-
-                        <div class="search-field">
-                            <select id="carMake" name="make">
-                                <option value="">Make</option>
-                                <option value="toyota">Toyota</option>
-                                <option value="honda">Honda</option>
-                                <option value="byd">BYD</option>
-                                <option value="geely">Geely</option>
-                                <option value="changan">Changan</option>
-                                <option value="mercedes">Mercedes-Benz</option>
-                                <option value="bmw">BMW</option>
-                            </select>
-                        </div>
-
-                        <div class="search-field">
-                            <select id="priceRange" name="price">
-                                <option value="">Price</option>
-                                <option value="0-5m">Under ₦5M</option>
-                                <option value="5m-10m">₦5M - ₦10M</option>
-                                <option value="10m-20m">₦10M - ₦20M</option>
-                                <option value="20m+">₦20M+</option>
-                            </select>
-                        </div>
-
-                        <button type="submit" class="btn btn-primary btn-search">
-                            Search Inventory
-                        </button>
-                    </div>
-                </form>
+                <div class="inventory-search-bar">
+                    <select id="filterType" name="type">
+                        <option value="">All Types</option>
+                        <option value="sedan">Sedan</option>
+                        <option value="suv">SUV</option>
+                        <option value="truck">Truck</option>
+                        <option value="van">Van / Bus</option>
+                        <option value="electric">Electric</option>
+                    </select>
+                    <select id="filterMake" name="make">
+                        <option value="">All Makes</option>
+                        <option value="toyota">Toyota</option>
+                        <option value="lexus">Lexus</option>
+                        <option value="honda">Honda</option>
+                        <option value="bmw">BMW</option>
+                        <option value="mercedes">Mercedes-Benz</option>
+                        <option value="audi">Audi</option>
+                        <option value="landrover">Land Rover</option>
+                        <option value="byd">BYD</option>
+                        <option value="geely">Geely</option>
+                        <option value="nissan">Nissan</option>
+                    </select>
+                    <select id="filterPrice" name="price">
+                        <option value="">Any Price</option>
+                        <option value="0-20m">Under ₦20M</option>
+                        <option value="20m-40m">₦20M – ₦40M</option>
+                        <option value="40m-60m">₦40M – ₦60M</option>
+                        <option value="60m+">₦60M+</option>
+                    </select>
+                    <button class="btn btn-primary" id="applyFilters">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+                        Search
+                    </button>
+                </div>
             </div>
         </section>
 
-        <!-- Inventory List -->
-        <section class="inventory-section">
+        <!-- ===== INVENTORY SECTION ===== -->
+        <section class="inventory-section section">
             <div class="container">
-                <!-- Toolbar -->
-                <div class="inventory-toolbar" data-animate="fade-up" data-delay="100">
-                    <div class="results-count">Showing 1-12 of 148 Vehicles</div>
 
+                <!-- Toolbar -->
+                <div class="inventory-toolbar">
+                    <div class="results-count" id="resultsCount">Loading vehicles…</div>
                     <div class="toolbar-actions">
                         <div class="sort-wrapper">
                             <label for="sortBy" style="display:none;">Sort By</label>
                             <select class="sort-select" id="sortBy">
-                                <option>Sort by: Featured</option>
-                                <option>Price: Low to High</option>
-                                <option>Price: High to Low</option>
-                                <option>Year: Newest</option>
-                                <option>Mileage: Lowest</option>
+                                <option value="featured">Sort: Featured</option>
+                                <option value="price-asc">Price: Low to High</option>
+                                <option value="price-desc">Price: High to Low</option>
+                                <option value="year-desc">Year: Newest</option>
+                                <option value="mileage-asc">Mileage: Lowest</option>
                             </select>
                         </div>
-
                         <div class="view-toggle">
                             <button class="view-btn active" id="gridView" aria-label="Grid View">
                                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <rect x="3" y="3" width="7" height="7" />
-                                    <rect x="14" y="3" width="7" height="7" />
-                                    <rect x="14" y="14" width="7" height="7" />
-                                    <rect x="3" y="14" width="7" height="7" />
+                                    <rect x="3" y="3" width="7" height="7"/>
+                                    <rect x="14" y="3" width="7" height="7"/>
+                                    <rect x="14" y="14" width="7" height="7"/>
+                                    <rect x="3" y="14" width="7" height="7"/>
                                 </svg>
                             </button>
                             <button class="view-btn" id="listView" aria-label="List View">
                                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <line x1="3" y1="6" x2="21" y2="6" />
-                                    <line x1="3" y1="12" x2="21" y2="12" />
-                                    <line x1="3" y1="18" x2="21" y2="18" />
+                                    <line x1="3" y1="6" x2="21" y2="6"/>
+                                    <line x1="3" y1="12" x2="21" y2="12"/>
+                                    <line x1="3" y1="18" x2="21" y2="18"/>
                                 </svg>
                             </button>
                         </div>
                     </div>
                 </div>
 
-                <!-- Inventory Grid -->
-                <!-- Populated by js/inventory.js -->
-                <div class="inventory-grid" id="inventoryGrid" data-animate="fade-up" data-delay="200"></div>
+                <!-- Inventory Grid — populated by inventory.js -->
+                <div class="inventory-grid" id="inventoryGrid"></div>
 
-                <!-- Pagination -->
-                <div class="pagination"></div>
+                <!-- Pagination — populated by inventory.js -->
+                <div class="pagination" id="pagination"></div>
+
             </div>
         </section>
     </main>
 
-    <!-- Footer -->
+    <!-- ===== FOOTER ===== -->
     <footer class="site-footer">
         <div class="container">
             <div class="footer-grid">
@@ -155,43 +213,13 @@
                     <a href="index.html" class="logo">
                         <img src="assets/images/logo.png" alt="DirecTokunbo" class="logo-img">
                     </a>
-                    <p class="footer-desc">Making car imports from China accessible, transparent, and stress-free for
-                        every Nigerian.</p>
+                    <p class="footer-desc">Making car imports from China accessible, transparent, and stress-free for every Nigerian.</p>
                     <div class="social-links">
-                        <a href="https://www.tiktok.com/@directokunbo?_r=1&_t=ZS-921nUbHZkrg" target="_blank"
-                            rel="noopener noreferrer" aria-label="TikTok"><svg viewBox="0 0 24 24" fill="currentColor">
-                                <path
-                                    d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z" />
-                            </svg></a>
-                        <a href="https://youtube.com/@directokunbo?si=Z6TWdFgL0NFSceq7" target="_blank"
-                            rel="noopener noreferrer" aria-label="YouTube"><svg viewBox="0 0 24 24" fill="currentColor">
-                                <path
-                                    d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
-                            </svg></a>
-                        <a href="https://x.com/directokunbo?s=11&t=aBi3ClXI9ZuBggTwBLVItw" target="_blank"
-                            rel="noopener noreferrer" aria-label="X (Twitter)"><svg viewBox="0 0 24 24"
-                                fill="currentColor">
-                                <path
-                                    d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
-                            </svg></a>
-                        <a href="https://www.instagram.com/directokunbo2025?igsh=Y3A2bGg5dGs1NTZ5" target="_blank"
-                            rel="noopener noreferrer" aria-label="Instagram"><svg viewBox="0 0 24 24"
-                                fill="currentColor">
-                                <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
-                                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" fill="none"
-                                    stroke="currentColor" stroke-width="2" />
-                                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" stroke="currentColor" stroke-width="2" />
-                            </svg></a>
-                        <a href="https://www.facebook.com/share/1Bi9NWUmxa/?mibextid=wwXIfr" target="_blank"
-                            rel="noopener noreferrer" aria-label="Facebook"><svg viewBox="0 0 24 24"
-                                fill="currentColor">
-                                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
-                            </svg></a>
-                        <a href="https://snapchat.com/t/Gh13hoNs" target="_blank" rel="noopener noreferrer"
-                            aria-label="Snapchat"><svg viewBox="0 0 24 24" fill="currentColor">
-                                <path
-                                    d="M12.206.793c.99 0 4.347.276 5.93 3.821.529 1.193.403 3.219.299 4.847l-.003.06c-.012.18-.022.345-.032.51.075.045.203.09.401.09.3-.016.659-.12 1.033-.301.165-.088.344-.104.464-.104.182 0 .359.029.509.09.45.149.734.479.734.838.015.449-.39.839-1.213 1.168-.089.029-.209.075-.344.119-.45.135-1.139.36-1.333.81-.09.224-.061.524.12.868l.015.015c.06.136 1.526 3.475 4.791 4.014.255.044.435.27.42.509 0 .075-.015.149-.045.225-.24.569-1.273.988-3.146 1.271c-.046-.225-.015-.239.166-.465.42-.509 3.264-.54 4.73-3.879 4.791-4.014l.016-.015c.181-.344.209-.644.12-.868-.195-.45-.884-.675-1.333-.81-.136-.044-.255-.09-.345-.119-.823-.33-1.227-.719-1.212-1.168 0-.359.284-.689.734-.838.15-.06.327-.09.51-.09.119 0 .299.016.463.104.375.179.733.285 1.033.301.199 0 .327-.044.401-.09-.016-.166-.027-.33-.032-.51l-.003-.06c-.105-1.628-.23-3.654.299-4.847C7.859 1.07 11.215.793 12.206.793z" />
-                            </svg></a>
+                        <a href="https://www.tiktok.com/@directokunbo?_r=1&_t=ZS-921nUbHZkrg" target="_blank" rel="noopener noreferrer" aria-label="TikTok"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"/></svg></a>
+                        <a href="https://youtube.com/@directokunbo?si=Z6TWdFgL0NFSceq7" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a>
+                        <a href="https://x.com/directokunbo?s=11&t=aBi3ClXI9ZuBggTwBLVItw" target="_blank" rel="noopener noreferrer" aria-label="X (Twitter)"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+                        <a href="https://www.instagram.com/directokunbo2025?igsh=Y3A2bGg5dGs1NTZ5" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="currentColor"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" fill="none" stroke="currentColor" stroke-width="2"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5" stroke="currentColor" stroke-width="2"/></svg></a>
+                        <a href="https://www.facebook.com/share/1Bi9NWUmxa/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
                     </div>
                 </div>
 
@@ -199,8 +227,8 @@
                     <div class="footer-col">
                         <h4>Company</h4>
                         <ul>
-                            <li><a href="inventory.html">Import</a></li>
-                            <li><a href="inventory.html">Auction</a></li>
+                            <li><a href="inventory.html">Browse Inventory</a></li>
+                            <li><a href="inventory.html?sort=ending">Live Auctions</a></li>
                             <li><a href="index.html#why-us">Why Us</a></li>
                             <li><a href="index.html#contact">Contact Us</a></li>
                         </ul>
@@ -210,14 +238,14 @@
                         <h4>Resources</h4>
                         <ul>
                             <li><a href="index.html#faqs">FAQs</a></li>
-                            <li><a href="#">Shipping Guide</a></li>
-                            <li><a href="#">Customs Info</a></li>
+                            <li><a href="index.html#faqs" title="See our FAQ for shipping and customs details">Shipping Guide</a></li>
+                            <li><a href="index.html#faqs" title="See our FAQ for shipping and customs details">Customs Info</a></li>
                         </ul>
                     </div>
 
                     <div class="footer-col">
                         <h4>Action</h4>
-                        <a href="inventory.html" class="btn btn-primary btn-sm">Explore Inventory</a>
+                        <a href="index.html#contact" class="btn btn-primary btn-sm">Get Started</a>
                     </div>
                 </div>
             </div>
@@ -229,9 +257,15 @@
         </div>
     </footer>
 
+    <a href="https://wa.me/2348036758830?text=Hi%2C%20I%27m%20interested%20in%20importing%20a%20car.%20Can%20you%20help%3F"
+       class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp">
+      <svg viewBox="0 0 24 24" fill="currentColor" width="28" height="28">
+        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+      </svg>
+    </a>
     <!-- Scripts -->
-    <script src="js/inventory.js"></script>
-    <script src="js/main.js"></script>
+    <script type="module" src="js/inventory.js"></script>
+    <script type="module" src="js/main.js"></script>
 </body>
 
 </html>
