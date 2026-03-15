@@ -43,7 +43,7 @@ import"./main-DdmvY31Y.js";function M(t){return function(){t|=0,t=t+1831565813|0
                     <span class="timer-label">remaining</span>
                 </div>
                 <div class="listing-actions">
-                    <a href="https://wa.me/2348036758830?text=${encodeURIComponent(`Hi, I'm interested in the ${e.year} ${e.make} ${e.model} (LOT #${e.lot}) listed at ${S(e.bid)}. Please share more details.`)}" class="btn btn-primary btn-sm" target="_blank" rel="noopener noreferrer">Place Bid</a>
+                    <a href="https://wa.me/2348121779861?text=${encodeURIComponent(`Hi, I'm interested in the ${e.year} ${e.make} ${e.model} (LOT #${e.lot}) listed at ${S(e.bid)}. Please share more details.`)}" class="btn btn-primary btn-sm" target="_blank" rel="noopener noreferrer">Place Bid</a>
                     <a href="car-detail.html?id=${e.id}" class="btn btn-outline btn-sm">Details</a>
                 </div>
             </div>
