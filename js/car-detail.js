@@ -153,7 +153,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Wire Place Bid button to WhatsApp
     const bidBtn = document.querySelector('.detail-bid-btn');
     if (bidBtn) {
-        bidBtn.href = `https://wa.me/2348036758830?text=${encodeURIComponent(`Hi, I'm interested in the ${car.year} ${car.make} ${car.model} (LOT #${car.lot}) listed at ${fmtPrice(car.bid)} CIF Lagos. Please share more details.`)}`;
+        bidBtn.href = `https://wa.me/2348121779861?text=${encodeURIComponent(`Hi, I'm interested in the ${car.year} ${car.make} ${car.model} (LOT #${car.lot}) listed at ${fmtPrice(car.bid)} CIF Lagos. Please share more details.`)}`;
         bidBtn.target = '_blank';
         bidBtn.rel = 'noopener noreferrer';
     }

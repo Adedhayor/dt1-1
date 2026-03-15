@@ -229,7 +229,7 @@ function renderCards(page) {
                     <span class="timer-label">remaining</span>
                 </div>
                 <div class="listing-actions">
-                    <a href="https://wa.me/2348036758830?text=${encodeURIComponent(`Hi, I'm interested in the ${car.year} ${car.make} ${car.model} (LOT #${car.lot}) listed at ${fmtPrice(car.bid)}. Please share more details.`)}" class="btn btn-primary btn-sm" target="_blank" rel="noopener noreferrer">Place Bid</a>
+                    <a href="https://wa.me/2348121779861?text=${encodeURIComponent(`Hi, I'm interested in the ${car.year} ${car.make} ${car.model} (LOT #${car.lot}) listed at ${fmtPrice(car.bid)}. Please share more details.`)}" class="btn btn-primary btn-sm" target="_blank" rel="noopener noreferrer">Place Bid</a>
                     <a href="car-detail.html?id=${car.id}" class="btn btn-outline btn-sm">Details</a>
                 </div>
             </div>
