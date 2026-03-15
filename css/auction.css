@@ -255,7 +255,7 @@
   grid-template-columns: 1fr 420px;
   gap: var(--space-3xl);
   align-items: center;
-  padding: var(--space-3xl) 0;
+  padding: 40px 0;
 }
 
 /* Hero Copy */
@@ -467,7 +467,7 @@
   }
 
   .hero-inner {
-    padding: var(--space-2xl) 0;
+    padding: 40px 0;
   }
 
   .hero-ctas {
