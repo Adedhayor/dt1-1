@@ -1567,6 +1567,7 @@ select {
   font-weight: 500;
   text-align: left;
   color: var(--color-text);
+  cursor: pointer;
   transition: background var(--transition-fast);
 }
 
@@ -1588,11 +1589,7 @@ select {
 .accordion-panel {
   max-height: 0;
   overflow: hidden;
-  transition: max-height var(--transition-slow);
-}
-
-.accordion-item.active .accordion-panel {
-  max-height: 500px;
+  transition: max-height 0.35s ease;
 }
 
 .accordion-panel p {

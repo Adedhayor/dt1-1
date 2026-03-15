@@ -142,18 +142,27 @@ document.addEventListener('DOMContentLoaded', function () {
   $$('.accordion-toggle').forEach(toggle => {
     toggle.addEventListener('click', function () {
       const item = this.parentElement;
+      const panel = item.querySelector('.accordion-panel');
       const isExpanded = this.getAttribute('aria-expanded') === 'true';
 
-      // Close others
-      $$('.accordion-toggle').forEach(other => {
-        if (other !== this) {
-          other.setAttribute('aria-expanded', 'false');
-          other.parentElement.classList.remove('active');
-        }
+      // Close all others
+      $$('.accordion-item').forEach(other => {
+        if (other === item) return;
+        const otherPanel = other.querySelector('.accordion-panel');
+        other.querySelector('.accordion-toggle').setAttribute('aria-expanded', 'false');
+        other.classList.remove('active');
+        if (otherPanel) otherPanel.style.maxHeight = '0';
       });
 
-      this.setAttribute('aria-expanded', !isExpanded);
-      item.classList.toggle('active');
+      if (isExpanded) {
+        this.setAttribute('aria-expanded', 'false');
+        item.classList.remove('active');
+        panel.style.maxHeight = '0';
+      } else {
+        this.setAttribute('aria-expanded', 'true');
+        item.classList.add('active');
+        panel.style.maxHeight = panel.scrollHeight + 'px';
+      }
     });
   });
 
