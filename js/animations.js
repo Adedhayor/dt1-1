@@ -103,11 +103,10 @@ function initScrollAnimations() {
     ease: 'power2.out',
   });
 
-  // FAQ accordion items
+  // FAQ accordion items — y only, no opacity (opacity blocks click interaction)
   gsap.from('.accordion-item', {
     scrollTrigger: { trigger: '.faqs', start: 'top 74%' },
     y: 20,
-    opacity: 0,
     duration: 0.45,
     stagger: 0.07,
     ease: 'power1.out',

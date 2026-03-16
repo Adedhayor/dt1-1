@@ -138,33 +138,6 @@ document.addEventListener('DOMContentLoaded', function () {
     }, 1000); // Update every second
   }
 
-  // ===== FAQ ACCORDION =====
-  $$('.accordion-toggle').forEach(toggle => {
-    toggle.addEventListener('click', function () {
-      const item = this.parentElement;
-      const panel = item.querySelector('.accordion-panel');
-      const isExpanded = this.getAttribute('aria-expanded') === 'true';
-
-      // Close all others
-      $$('.accordion-item').forEach(other => {
-        if (other === item) return;
-        const otherPanel = other.querySelector('.accordion-panel');
-        other.querySelector('.accordion-toggle').setAttribute('aria-expanded', 'false');
-        other.classList.remove('active');
-        if (otherPanel) otherPanel.style.maxHeight = '0';
-      });
-
-      if (isExpanded) {
-        this.setAttribute('aria-expanded', 'false');
-        item.classList.remove('active');
-        panel.style.maxHeight = '0';
-      } else {
-        this.setAttribute('aria-expanded', 'true');
-        item.classList.add('active');
-        panel.style.maxHeight = panel.scrollHeight + 'px';
-      }
-    });
-  });
 
   // ===== CONTACT FORM =====
   const contactForm = $('#contactForm');
@@ -306,6 +279,37 @@ function initTickerHoverCards() {
 const spinStyle = document.createElement('style');
 spinStyle.textContent = `@keyframes spin{from{transform:rotate(0)}to{transform:rotate(360deg)}}.spin{animation:spin 1s linear infinite}`;
 document.head.appendChild(spinStyle);
+
+// ===== FAQ ACCORDION (standalone — isolated from other JS) =====
+document.addEventListener('DOMContentLoaded', function () {
+  document.querySelectorAll('.accordion-toggle').forEach(function (toggle) {
+    toggle.addEventListener('click', function () {
+      var item = this.closest('.accordion-item');
+      var panel = item.querySelector('.accordion-panel');
+      var isOpen = this.getAttribute('aria-expanded') === 'true';
+
+      // Close all other panels
+      document.querySelectorAll('.accordion-item').forEach(function (other) {
+        if (other === item) return;
+        var otherToggle = other.querySelector('.accordion-toggle');
+        var otherPanel = other.querySelector('.accordion-panel');
+        if (otherToggle) otherToggle.setAttribute('aria-expanded', 'false');
+        other.classList.remove('active');
+        if (otherPanel) otherPanel.style.maxHeight = '0';
+      });
+
+      if (isOpen) {
+        this.setAttribute('aria-expanded', 'false');
+        item.classList.remove('active');
+        panel.style.maxHeight = '0';
+      } else {
+        this.setAttribute('aria-expanded', 'true');
+        item.classList.add('active');
+        panel.style.maxHeight = panel.scrollHeight + 'px';
+      }
+    });
+  });
+});
 
 // ===== IMAGE ERROR FALLBACK =====
 document.addEventListener('error', function(e) {
